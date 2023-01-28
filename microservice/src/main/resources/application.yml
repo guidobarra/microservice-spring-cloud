@@ -1,0 +1,27 @@
+server:
+  port: 9292
+  servlet:
+    context-path: '@app.context-path@'
+
+spring:
+  main:
+    banner-mode: 'off'
+  application:
+    name: '@project.artifactId@'
+  profiles:
+    active: '@activatedProperties@'
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+---
+spring:
+  config:
+    activate:
+      on-profile: beta
+
+#TODO PORQUE CUANDO CREO LA IMAGEN NO TOMA LOS VALORES DECLARADOS EN EL POM EXAMPLE app.context-path
+server.servlet.context-path: '/microservice'

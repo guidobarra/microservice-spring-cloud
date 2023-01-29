@@ -1,9 +1,9 @@
-package com.guba.spring.microservice.service.impl;
+package com.guba.spring.microserviceuser.service.impl;
 
-import com.guba.spring.microservice.shared.Utils;
-import com.guba.spring.microservice.service.UserService;
-import com.guba.spring.microservice.web.model.request.UserDetailsRequestModel;
-import com.guba.spring.microservice.web.model.response.UserRest;
+import com.guba.spring.microserviceuser.shared.Utils;
+import com.guba.spring.microserviceuser.service.UserService;
+import com.guba.spring.microserviceuser.web.model.request.UserDetailsRequestModel;
+import com.guba.spring.microserviceuser.web.model.response.UserRest;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.guba.spring.microservice.shared;
+package com.guba.spring.microserviceuser.shared;
 
 import org.springframework.stereotype.Service;
 

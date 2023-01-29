@@ -1,4 +1,4 @@
-package com.guba.spring.microservice.web.model.response;
+package com.guba.spring.microserviceuser.web.model.response;
 
 import lombok.Getter;
 import lombok.Setter;

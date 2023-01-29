@@ -1,12 +1,12 @@
-package com.guba.spring.microservice;
+package com.guba.spring.microserviceuser;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MicroServiceApplication {
+public class UserApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MicroServiceApplication.class, args);
+		SpringApplication.run(UserApplication.class, args);
 	}
 }

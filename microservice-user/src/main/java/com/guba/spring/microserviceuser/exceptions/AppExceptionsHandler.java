@@ -1,6 +1,6 @@
-package com.guba.spring.microservice.exceptions;
+package com.guba.spring.microserviceuser.exceptions;
 
-import com.guba.spring.microservice.web.model.response.ErrorMessage;
+import com.guba.spring.microserviceuser.web.model.response.ErrorMessage;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

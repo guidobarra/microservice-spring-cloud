@@ -1,9 +1,9 @@
-package com.guba.spring.microservice.web.controllers;
+package com.guba.spring.microserviceuser.web.controllers;
 
-import com.guba.spring.microservice.service.UserService;
-import com.guba.spring.microservice.web.model.request.UpdateUserDetailsRequestModel;
-import com.guba.spring.microservice.web.model.request.UserDetailsRequestModel;
-import com.guba.spring.microservice.web.model.response.UserRest;
+import com.guba.spring.microserviceuser.service.UserService;
+import com.guba.spring.microserviceuser.web.model.request.UpdateUserDetailsRequestModel;
+import com.guba.spring.microserviceuser.web.model.request.UserDetailsRequestModel;
+import com.guba.spring.microserviceuser.web.model.response.UserRest;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;

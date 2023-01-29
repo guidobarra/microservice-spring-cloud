@@ -1,4 +1,4 @@
-package com.guba.spring.microservice.exceptions;
+package com.guba.spring.microserviceuser.exceptions;
 
 public class UserServiceException extends RuntimeException {
 	

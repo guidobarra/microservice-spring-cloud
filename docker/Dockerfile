@@ -1,22 +1,24 @@
 FROM maven:3.8.7-amazoncorretto-11 as build
+ARG PROJECT_NAME='PROJECT'
 
 WORKDIR /workspace
 
-COPY pom.xml pom.xml
-
-COPY src/ /workspace/src/
+COPY . /workspace/
 
 RUN mvn clean package
 
 FROM openjdk:11.0.16-jre-slim as prod
+ARG PROJECT_NAME='PROJECT'
+ARG PORT=9292
 
-EXPOSE 9292/tcp
+
+EXPOSE ${PORT}/tcp
 
 VOLUME /opt/logs
 
-COPY --from=build /workspace/target/*.jar /opt/app.jar
+COPY --from=build /workspace/${PROJECT_NAME}/target/*.jar /opt/app.jar
 
-COPY src/main/resources/* /opt/
+COPY ${PROJECT_NAME}/src/main/resources/* /opt/
 
 WORKDIR /opt
 

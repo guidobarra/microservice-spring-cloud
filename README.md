@@ -2,4 +2,4 @@
 create microservices, api gateway and eureka discovery/service
 
 ## run app
-docker-compose -f ./microservice/docker/docker-compose.yml --project-directory ./microservice/docker up
+docker-compose -f ./docker/docker-compose.yml --project-directory ./docker up

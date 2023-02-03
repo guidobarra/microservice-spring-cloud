@@ -13,12 +13,10 @@ spring:
 
 eureka:
   client:
-    register-with-eureka: false
     fetch-registry: false
+    register-with-eureka: false
     service-url:
-      default-zone: http://localhost:9090/eureka
-  instance:
-    prefer-ip-address: true
+      defaultZone: http://localhost:9090/${spring.application.name}/eureka
 
 ---
 spring:
@@ -31,5 +29,9 @@ spring:
   config:
     activate:
       on-profile: beta
+  application.name: eureka-discovery
+
 
 server.servlet.context-path: '/eureka-discovery'
+eureka.client.service-url:
+  defaultZone: http://eureka_discovery:9090/eureka-discovery/eureka

@@ -40,13 +40,14 @@
         <!-- SPRING-EUREKA -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-            <version>${spring.eureka.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
             <version>${spring.eureka.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>archaius-core</artifactId>
+                    <groupId>com.netflix.archaius</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <!-- DEPENDENCY DUE TO CONFLICT, CLASS AND METHOD NOT FOUND -->

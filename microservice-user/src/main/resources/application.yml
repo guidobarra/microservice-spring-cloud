@@ -11,6 +11,14 @@ spring:
   profiles:
     active: '@activatedProperties@'
 
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9090/eureka-discovery/eureka
+    fetch-registry: true
+    register-with-eureka: true
+    enabled: true
+
 ---
 spring:
   config:
@@ -22,6 +30,9 @@ spring:
   config:
     activate:
       on-profile: beta
+  application.name: microservice
 
 #TODO PORQUE CUANDO CREO LA IMAGEN NO TOMA LOS VALORES DECLARADOS EN EL POM EXAMPLE app.context-path
 server.servlet.context-path: '/microservice'
+eureka.client.service-url:
+  defaultZone: http://eureka_discovery:9090/eureka-discovery/eureka

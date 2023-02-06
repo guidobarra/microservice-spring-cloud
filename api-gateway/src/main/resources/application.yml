@@ -19,8 +19,18 @@ eureka:
     register-with-eureka: true
     enabled: true
 
-spring.cloud.gateway.discovery.locator.enabled: true
-spring.cloud.gateway.discovery.locator.lower-case-service-id: true
+spring.cloud.gateway:
+  #discovery.locator:
+    #enabled: true
+    #lower-case-service-id: true
+  routes:
+    - id: microservice-user-id
+      uri: lb://microservice-user
+      predicates:
+        - Path=${server.servlet.context-path}/microservice-user/**
+        - Method=GET, POST, PUT, DELETE
+      filters:
+        - StripPrefix=1
 
 ---
 spring:

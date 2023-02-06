@@ -1,5 +1,5 @@
 server:
-  port: 9293
+  port: 9091
   servlet:
     context-path: '@app.context-path@'
 

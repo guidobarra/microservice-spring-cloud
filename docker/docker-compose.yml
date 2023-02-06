@@ -11,9 +11,9 @@ services:
       dockerfile: ./docker/Dockerfile
       args:
         PROJECT_NAME: microservice-user
-        PORT: 9292
+        PORT: 9092
     ports:
-      - "9292:9292"
+      - "9092:9092"
     networks:
       - network_java
 

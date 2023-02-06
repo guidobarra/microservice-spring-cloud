@@ -9,7 +9,7 @@ RUN mvn clean package
 
 FROM openjdk:11.0.16-jre-slim as prod
 ARG PROJECT_NAME='PROJECT'
-ARG PORT=9292
+ARG PORT=9090
 
 
 EXPOSE ${PORT}/tcp

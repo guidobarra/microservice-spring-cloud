@@ -11,6 +11,7 @@
     <modules>
         <module>microservice-user</module>
         <module>eureka-discovery</module>
+        <module>api-gateway</module>
     </modules>
 
     <properties>

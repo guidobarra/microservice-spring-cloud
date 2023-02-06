@@ -1,5 +1,5 @@
 server:
-  port: 9292
+  port: 9293
   servlet:
     context-path: '@app.context-path@'
 
@@ -19,6 +19,9 @@ eureka:
     register-with-eureka: true
     enabled: true
 
+spring.cloud.gateway.discovery.locator.enabled: true
+spring.cloud.gateway.discovery.locator.lower-case-service-id: true
+
 ---
 spring:
   config:
@@ -30,9 +33,8 @@ spring:
   config:
     activate:
       on-profile: beta
-  application.name: microservice
+  application.name: api-gateway
 
-#TODO PORQUE CUANDO CREO LA IMAGEN NO TOMA LOS VALORES DECLARADOS EN EL POM EXAMPLE app.context-path
-server.servlet.context-path: '/microservice-user'
+server.servlet.context-path: '/api-gateway'
 eureka.client.service-url:
   defaultZone: http://eureka_discovery:9090/eureka-discovery/eureka

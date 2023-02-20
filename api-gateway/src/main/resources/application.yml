@@ -20,7 +20,7 @@ eureka:
     enabled: true
 
 spring.cloud.gateway:
-  #discovery.locator:
+  discovery.locator:
     #enabled: true
     #lower-case-service-id: true
   routes:
@@ -30,7 +30,8 @@ spring.cloud.gateway:
         - Path=${server.servlet.context-path}/microservice-user/**
         - Method=GET, POST, PUT, DELETE
       filters:
-        - StripPrefix=1
+        #- StripPrefix=1 (remove first prefix of Path)
+        - RewritePath=${server.servlet.context-path}/microservice-user/(?<segment>.*), /microservice-user/$\{segment}
 
 ---
 spring:

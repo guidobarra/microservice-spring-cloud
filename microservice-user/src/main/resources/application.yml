@@ -18,6 +18,8 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
     enabled: true
+  instance:
+    instance-id: ${spring.application.name}${random.uuid}
 
 ---
 spring:
@@ -25,6 +27,8 @@ spring:
     activate:
       on-profile: dev
 
+server:
+  port: 0
 ---
 spring:
   config:

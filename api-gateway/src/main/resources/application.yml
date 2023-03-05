@@ -20,7 +20,7 @@ eureka:
     enabled: true
 
 spring.cloud.gateway:
-  discovery.locator:
+  #discovery.locator:
     #enabled: true
     #lower-case-service-id: true
   routes:

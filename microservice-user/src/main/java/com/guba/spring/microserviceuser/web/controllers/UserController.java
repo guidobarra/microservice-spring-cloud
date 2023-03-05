@@ -7,6 +7,7 @@ import com.guba.spring.microserviceuser.web.model.response.UserRest;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/users")
@@ -24,6 +26,7 @@ public class UserController {
 	private static final Map<String, UserRest> USERS = new HashMap<>();
 
 	private final UserService userService;
+	private final Environment env;
 	
 	@GetMapping
 	public String getUsers(
@@ -93,5 +96,12 @@ public class UserController {
 		USERS.remove(id);
 		
 		return ResponseEntity.noContent().build();
+	}
+
+	@GetMapping(path="/health-check")
+	public ResponseEntity<String> healthCheck() {
+
+		var result = "App startup, eureka.instance.instance-id: " + env.getProperty("eureka.instance.instance-id");
+		return ResponseEntity.of(Optional.of(result));
 	}
 }
